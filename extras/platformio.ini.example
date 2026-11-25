@@ -1,0 +1,16 @@
+[env:esp32-s3-devkitc-1]
+platform = https://github.com/pioarduino/platform-espressif32/releases/download/55.03.311/platform-espressif32.zip
+board = esp32-s3-devkitc-1
+framework = arduino
+monitor_speed = 115200
+board_build.partitions = huge_app.csv
+
+; If the library is local to this project:
+; lib_deps = file://../AirNginESP32
+
+build_flags =
+    -DCONFIG_AIRNGIN_ENABLE_CLOUD_DATABASE=1
+    -DCONFIG_AIRNGIN_DIAGNOSTIC_LOGS=1
+    -DCONFIG_AIRNGIN_DIAGNOSTIC_VERBOSE=1
+    -DCONFIG_AIRNGIN_DIAGNOSTIC_LOG_SECRETS=0
+    -DCONFIG_AIRNGIN_USE_AES=0

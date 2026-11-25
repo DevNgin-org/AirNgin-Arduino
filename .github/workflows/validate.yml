@@ -1,0 +1,34 @@
+name: Validate Arduino library
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/arduino-lint-action@v2.0.0
+        with:
+          compliance: strict
+          project-type: library
+  examples:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        board: [esp32, esp32s2, esp32s3, esp32c3, esp32c6]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/setup-arduino-cli@v2
+        with:
+          version: 1.3.1
+      - name: Install ESP32 core
+        run: |
+          index=https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          arduino-cli core update-index --additional-urls "$index"
+          arduino-cli core install esp32:esp32@3.3.10 --additional-urls "$index"
+      - name: Compile example sketches
+        run: |
+          for sketch in examples/*/*.ino; do
+            arduino-cli compile --fqbn "esp32:esp32:${{ matrix.board }}:PartitionScheme=huge_app" --library "$PWD" "$sketch"
+          done

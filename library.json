@@ -1,0 +1,35 @@
+{
+  "name": "AirNginESP32SDK",
+  "version": "1.6.1",
+  "description": "AirNgin device SDK for ESP32 with Wi-Fi provisioning, MQTT/TLS telemetry and command handling.",
+  "keywords": [
+    "airngin",
+    "iot",
+    "esp32",
+    "mqtt",
+    "tls",
+    "provisioning"
+  ],
+  "frameworks": [
+    "arduino"
+  ],
+  "platforms": [
+    "espressif32"
+  ],
+  "headers": [
+    "AirNginESP32SDK.h"
+  ],
+  "homepage": "https://docs.airngin.com/",
+  "license": "0BSD",
+  "authors": [
+    {
+      "name": "AirNgin Team",
+      "email": "dev@airngin.com",
+      "maintainer": true
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevNgin-org/AirNgin-Arduino.git"
+  }
+}

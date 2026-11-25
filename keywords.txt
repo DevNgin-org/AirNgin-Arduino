@@ -1,0 +1,14 @@
+AirNgin	KEYWORD1
+AirNginESP32Class	KEYWORD1
+beginManaged	KEYWORD2
+beginExternal	KEYWORD2
+publish	KEYWORD2
+report	KEYWORD2
+requestProvisioning	KEYWORD2
+cancelProvisioning	KEYWORD2
+databaseSet	KEYWORD2
+databaseGet	KEYWORD2
+databaseDelete	KEYWORD2
+smsCenter	KEYWORD2
+smsUser	KEYWORD2
+pushUser	KEYWORD2
