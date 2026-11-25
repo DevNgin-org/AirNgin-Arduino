@@ -2,6 +2,8 @@
 
 This is the Arduino-ESP32 port of the current AirNgin SDK 1.6.0. The port keeps the proven Cloud/MQTT/provisioning contracts while making setup practical in Arduino IDE and PlatformIO.
 
+[Choose an example by use case](../../README.md#examples)
+
 ## Start here
 
 1. [Installation and build configuration](installation.md)

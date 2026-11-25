@@ -6,6 +6,16 @@ Arduino-ESP32 port of the AirNgin ESP-IDF SDK 1.6.0.
 
 **Engineering notes:** [Porting report](PORTING_REPORT.md) · [Validation status](VALIDATION.md)
 
+## Choose your board and SDK
+
+| Setup guide | Supported build targets | Verification |
+|---|---|---|
+| [ESP32 with Arduino IDE or PlatformIO](docs/en/getting-started.md) | ESP32, S2, S3, C3 and C6 Dev Modules, Arduino-ESP32 3.3.10 | The nine release examples compiled for all five targets. On a physical S3, DeviceUptime reconnected to Wi-Fi after a restart, synchronized time and reached MQTT READY. |
+| [ESP32-S3 with ESP-IDF](https://github.com/DevNgin-org/airngin-esp-idf-sdk/blob/main/docs/en/getting-started.md) | ESP32-S3, ESP-IDF 5.5.x | [Build and host-test results](https://github.com/DevNgin-org/airngin-esp-idf-sdk/blob/main/VALIDATION.md) cover specific configurations. See the report for the hardware checks still open. |
+| [STM32 with Ethernet](https://github.com/DevNgin-org/AirNginSTM32LAN#readme) | NUCLEO-F401RE with a W5100 shield | The LanUptime firmware compiled for the F401RE. Discovery from a phone and cloud delivery on the physical board are pending. |
+
+The additional [DirectNetwork example](examples/DirectNetwork/DirectNetwork.ino) compiled for ESP32-S3 in both Ethernet and manual Wi-Fi modes. On-board pairing with the app remains to be verified. For the scope of the S3 bench test, see the [Arduino validation report](VALIDATION.md).
+
 ## What is included
 
 - Managed Wi-Fi with AirNgin provisioning
@@ -52,17 +62,20 @@ Open **DeviceUptime** and configure the serial, producer code and setup password
 
 ## Examples
 
-| Example | Purpose |
+| Example | When to use it |
 |---|---|
-| `DeviceUptime` | Publish uptime in seconds every 30 seconds; works without an external sensor |
-| `ManagedBasic` | Smallest managed-mode integration |
-| `ManagedProvisionButton` | the selected GPIO, 10-second provisioning toggle |
-| `ExternalWiFi` | Arduino `WiFi` owned by the sketch |
-| `AESExternal` | External mode + application-layer AES |
-| `TimeFeed` | UTC/Tehran AirNgin time feed |
-| `Notifications` | Center SMS, user SMS, user Push |
-| `CloudDatabase` | HTTPS SET/GET/DELETE |
-| `SerialTestConsole` | Unified developer console |
+| [ManagedBasic](examples/ManagedBasic/ManagedBasic.ino) | Pair through the board’s temporary Wi-Fi (SoftAP), then switch a virtual channel on and off with the ch1 command. |
+| [DirectNetwork](examples/DirectNetwork/DirectNetwork.ino) | Pair from the mobile app on the same LAN. Select Ethernet or manually configured Wi-Fi. After the board gets an IP address, the app discovers it via mDNS. |
+| [ExternalWiFi](examples/ExternalWiFi/ExternalWiFi.ino) | Enter Wi-Fi and MQTT credentials in the sketch. Use this when your own firmware manages the connection. |
+| [DeviceUptime](examples/DeviceUptime/DeviceUptime.ino) | Publish uptime in seconds every 30 seconds to test telemetry without a sensor. |
+| [ManagedProvisionButton](examples/ManagedProvisionButton/ManagedProvisionButton.ino) | Hold a physical button for 10 seconds to open setup. Hold it again for 10 seconds to cancel. |
+| [AESExternal](examples/AESExternal/AESExternal.ino) | Use manually supplied credentials and an AES-256-GCM key to encrypt application messages over MQTT/TLS. |
+| [TimeFeed](examples/TimeFeed/TimeFeed.ino) | Subscribe to the AirNgin Tehran time feed and print the received time in Serial Monitor. |
+| [Notifications](examples/Notifications/Notifications.ino) | Trigger an SMS to the center or owner, or a push notification to the owner, using an approved message code. |
+| [CloudDatabase](examples/CloudDatabase/CloudDatabase.ino) | Use Serial Monitor to write, read or delete a test key in the AirNgin cloud database over HTTPS. |
+| [SerialTestConsole](examples/SerialTestConsole/SerialTestConsole.ino) | Use the serial console to test SDK commands and inspect device events during development. |
+
+In **DirectNetwork**, set `deviceSerial` and `producer` to the registered device identifiers. Leave `connection` at `Connection::Ethernet` for wired LAN, or select `Connection::ManualWiFi` and fill in `wifiSSID` and `wifiPassword`. On first setup, the app has three minutes after the board gets an IP address to send the project settings. Type `p` in Serial Monitor to reopen setup.
 
 ## Official AirNgin docs
 

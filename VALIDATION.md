@@ -36,6 +36,10 @@ The ZIP was installed into a clean Arduino sketchbook. DeviceUptime and CloudDat
 
 The host regression suite for the Arduino sources covers device identity, query decoding, provisioning transitions, diagnostics, MQTT topic formation, the command/report JSON protocol, AES fixtures, and the PLAIN/AES profile format.
 
+## DirectNetwork example
+
+The additional example compiled and linked for the ESP32-S3 Dev Module with Arduino-ESP32 3.3.10 and Huge APP in both configurations: Ethernet (W5500) and manual Wi-Fi. Physical discovery, mobile pairing and cloud delivery have yet to be verified for this sketch. The nine-example matrix above describes the v1.6.1 release.
+
 ## ESP32-S3 bench test
 
 On a 16 MB ESP32-S3 with 8 MB PSRAM, a DeviceUptime test build retained its provisioned profile after restart, joined Wi-Fi, synchronized its clock and reached MQTT READY. Uptime reports at 30 and 60 seconds were accepted by the SDK queue. Dashboard receipt was not verified.
