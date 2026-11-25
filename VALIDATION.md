@@ -20,7 +20,7 @@
 
 ## Arduino firmware builds
 
-Arduino CLI 1.3.1, Espressif core 3.3.10, 4 MB flash, Huge APP partition. The generic Dev Module FQBNs are `esp32:esp32:esp32`, `esp32:esp32:esp32s2`, `esp32:esp32:esp32s3`, `esp32:esp32:esp32c3` and `esp32:esp32:esp32c6`. The release workflow compiles all nine sketches for each target, including the AES and HTTPS database configurations.
+Arduino CLI 1.3.1, Espressif core 3.3.10, 4 MB flash, Huge APP partition. The generic Dev Module FQBNs are `esp32:esp32:esp32`, `esp32:esp32:esp32s2`, `esp32:esp32:esp32s3`, `esp32:esp32:esp32c3` and `esp32:esp32:esp32c6`. The release workflow compiles every example sketch for each target, including the AES and HTTPS database configurations.
 
 Local results on 2026-11-25 using the Dev Module defaults with the partition above:
 
@@ -38,7 +38,7 @@ The host regression suite for the Arduino sources covers device identity, query 
 
 ## DirectNetwork example
 
-The additional example compiled and linked for the ESP32-S3 Dev Module with Arduino-ESP32 3.3.10 and Huge APP in both configurations: Ethernet (W5500) and manual Wi-Fi. Physical discovery, mobile pairing and cloud delivery have yet to be verified for this sketch. The nine-example matrix above describes the v1.6.1 release.
+[GitHub Actions](https://github.com/DevNgin-org/AirNgin-Arduino/actions/runs/45597719631) compiled all ten sketches on all five targets, with DirectNetwork in its default Ethernet mode. In local tests, DirectNetwork also compiled and linked for the ESP32-S3 Dev Module with Arduino-ESP32 3.3.10 and Huge APP in both configurations: Ethernet (W5500) and manual Wi-Fi. Physical discovery, mobile pairing and cloud delivery have yet to be verified for this sketch. The nine-example matrix above describes the v1.6.1 release.
 
 ## ESP32-S3 bench test
 

@@ -1,6 +1,6 @@
 {
   "name": "AirNginESP32SDK",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "description": "AirNgin device SDK for ESP32 with Wi-Fi provisioning, MQTT/TLS telemetry and command handling.",
   "keywords": [
     "airngin",

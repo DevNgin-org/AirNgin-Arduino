@@ -1,5 +1,10 @@
 # Changelog
 
+## Arduino library 1.6.2
+
+- Add DirectNetwork, a standalone example for Ethernet or manual Wi-Fi with local discovery and provisioning from the AirNgin mobile app.
+- Add a bilingual guide to all ten examples, with setup links and board validation details.
+
 ## Arduino library 1.6.1
 
 - Add the DeviceUptime telemetry sketch and multi-board compile matrix.

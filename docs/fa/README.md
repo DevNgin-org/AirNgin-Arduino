@@ -1,4 +1,4 @@
-# مستندات AirNgin ESP32 SDK برای Arduino — نسخه 1.6.1
+# مستندات AirNgin ESP32 SDK برای Arduino — نسخه 1.6.2
 
 این کتابخانه، نسخه Arduino-ESP32 از SDK فعلی AirNgin 1.6.0 است. هدف این پورت این است که قراردادهای Cloud، MQTT، Provisioning و APIهای اثبات‌شده تغییر نکنند، ولی استفاده در Arduino IDE و PlatformIO ساده شود.
 
@@ -6,7 +6,7 @@
 
 | راهنمای راه‌اندازی | برد و محیط | چه چیزی تست شده؟ |
 |---|---|---|
-| [ESP32 با Arduino یا PlatformIO](getting-started.md) | ESP32، ESP32-S2، ESP32-S3، ESP32-C3 و ESP32-C6 با هستهٔ Arduino-ESP32 3.3.10 | ۹ مثال نسخهٔ 1.6.1 برای هر پنج برد کامپایل شدند. روی یک ESP32-S3 واقعی، مثال DeviceUptime بعد از خاموش‌روشن شدن با تنظیمات ذخیره‌شده به وای‌فای وصل شد، ساعت را تنظیم کرد و به MQTT READY رسید. |
+| [ESP32 با Arduino یا PlatformIO](getting-started.md) | ESP32، ESP32-S2، ESP32-S3، ESP32-C3 و ESP32-C6 با هستهٔ Arduino-ESP32 3.3.10 | هر ۱۰ مثال نسخهٔ 1.6.2، از جمله DirectNetwork در حالت پیش‌فرض اترنت، برای هر پنج خانواده کامپایل شدند. روی یک ESP32-S3 واقعی، مثال DeviceUptime بعد از خاموش‌روشن شدن با تنظیمات ذخیره‌شده به وای‌فای وصل شد، ساعت را تنظیم کرد و به MQTT READY رسید. |
 | [ESP32-S3 با ESP-IDF](https://github.com/DevNgin-org/airngin-esp-idf-sdk/blob/main/docs/fa/getting-started.md) | ESP32-S3 با ESP-IDF 5.5.x | ساخت پروژه و آزمون‌های نرم‌افزاری برای پیکربندی‌های مشخص ثبت شده‌اند. وضعیت هر قابلیت در [گزارش آزمون SDK](https://github.com/DevNgin-org/airngin-esp-idf-sdk/blob/main/VALIDATION.md) آمده است. |
 | [STM32 با اترنت](https://github.com/DevNgin-org/AirNginSTM32LAN#readme) | NUCLEO-F401RE با شیلد W5100 | مثال LanUptime برای F401RE کامپایل شده است. کشف برد از اپ و رسیدن داده به پنل روی سخت‌افزار واقعی هنوز تأیید نشده است. |
 

@@ -1,4 +1,4 @@
-# AirNgin ESP32 SDK Arduino Documentation — 1.6.1
+# AirNgin ESP32 SDK Arduino Documentation — 1.6.2
 
 This is the Arduino-ESP32 port of the current AirNgin SDK 1.6.0. The port keeps the proven Cloud/MQTT/provisioning contracts while making setup practical in Arduino IDE and PlatformIO.
 

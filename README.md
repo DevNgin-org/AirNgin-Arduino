@@ -1,4 +1,4 @@
-# AirNgin ESP32 SDK — Arduino library 1.6.1
+# AirNgin ESP32 SDK — Arduino library 1.6.2
 
 Arduino-ESP32 port of the AirNgin ESP-IDF SDK 1.6.0.
 
@@ -10,7 +10,7 @@ Arduino-ESP32 port of the AirNgin ESP-IDF SDK 1.6.0.
 
 | Setup guide | Supported build targets | Verification |
 |---|---|---|
-| [ESP32 with Arduino IDE or PlatformIO](docs/en/getting-started.md) | ESP32, S2, S3, C3 and C6 Dev Modules, Arduino-ESP32 3.3.10 | The nine release examples compiled for all five targets. On a physical S3, DeviceUptime reconnected to Wi-Fi after a restart, synchronized time and reached MQTT READY. |
+| [ESP32 with Arduino IDE or PlatformIO](docs/en/getting-started.md) | ESP32, S2, S3, C3 and C6 Dev Modules, Arduino-ESP32 3.3.10 | All ten examples, including DirectNetwork in its default Ethernet configuration, compiled for all five targets. On a physical S3, DeviceUptime reconnected to Wi-Fi after a restart, synchronized time and reached MQTT READY. |
 | [ESP32-S3 with ESP-IDF](https://github.com/DevNgin-org/airngin-esp-idf-sdk/blob/main/docs/en/getting-started.md) | ESP32-S3, ESP-IDF 5.5.x | [Build and host-test results](https://github.com/DevNgin-org/airngin-esp-idf-sdk/blob/main/VALIDATION.md) cover specific configurations. See the report for the hardware checks still open. |
 | [STM32 with Ethernet](https://github.com/DevNgin-org/AirNginSTM32LAN#readme) | NUCLEO-F401RE with a W5100 shield | The LanUptime firmware compiled for the F401RE. Discovery from a phone and cloud delivery on the physical board are pending. |
 
@@ -46,7 +46,7 @@ Library Manager search name after registration: **AirNginESP32SDK**. Use `#inclu
 
 1. Install Espressif **ESP32 by Espressif Systems** in Boards Manager.
 2. `Sketch > Include Library > Add .ZIP Library...`
-3. Select `AirNginESP32SDK-1.6.1.zip`.
+3. Select `AirNginESP32SDK-1.6.2.zip`.
 4. Open `File > Examples > AirNginESP32SDK > ManagedBasic`.
 5. Choose the matching ESP32 Dev Module and **Huge APP**. Set the registered serial, producer code and setup AP password in managed examples. For the provisioning button, wire a free input to ground through the button and set `provisionButtonPin` in the sketch.
 
